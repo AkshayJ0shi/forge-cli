@@ -1,0 +1,50 @@
+{
+  "name": "@shard/cli",
+  "version": "1.0.0",
+  "description": "Shard CLI - Command line tools for game developers",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "shard": "./bin/shard.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node ./dist/index.js",
+    "test": "vitest --run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "shard",
+    "cli",
+    "game-development",
+    "recording",
+    "godot"
+  ],
+  "author": "Shard",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shard/shard-cli.git"
+  },
+  "homepage": "https://shard.gg/docs/shard-cli",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "inquirer": "^8.2.6"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
