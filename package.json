@@ -1,11 +1,11 @@
 {
-  "name": "@shard/cli",
+  "name": "@shard-dev/forge",
   "version": "1.0.0",
-  "description": "Shard CLI - Command line tools for game developers",
+  "description": "Forge - Command line tools for Shard game developers",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "shard": "./bin/shard.js"
+    "forge": "./bin/forge.js"
   },
   "scripts": {
     "build": "tsc",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shard/shard-cli.git"
+    "url": "https://github.com/AkshayJ0shi/shard-cli"
   },
   "homepage": "https://shard.gg/docs/shard-cli",
   "files": [

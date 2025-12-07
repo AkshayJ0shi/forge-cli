@@ -1,4 +1,4 @@
-# Shard CLI
+# Forge CLI
 
 Command line tools for game developers integrating with the Shard platform.
 
@@ -7,38 +7,38 @@ Command line tools for game developers integrating with the Shard platform.
 ### Using npx (recommended)
 
 ```bash
-npx @shard/cli recording init
+npx @shard-dev/forge recording init
 ```
 
 ### Global installation
 
 ```bash
-npm install -g @shard/cli
+npm install -g @shard-dev/forge
 ```
 
 ## Quick Start
 
 ```bash
 # 1. Initialize for your game
-npx @shard/cli recording init
+npx @shard-dev/forge recording init
 # Enter: Everplast
 
 # 2. Add recording events
-npx @shard/cli recording add
+npx @shard-dev/forge recording add
 # Enter: Boss Defeated → everplast_a1b2c3d4
 
 # 3. Export for distribution
-npx @shard/cli recording export
+npx @shard-dev/forge recording export
 # Creates: game_events.json
 ```
 
 ## Commands
 
-### `shard recording init`
+### `forge recording init`
 
 Create a new `shard.recording.json` configuration file.
 
-### `shard recording add`
+### `forge recording add`
 
 Add a new recording event with an auto-generated unique ID.
 
@@ -51,24 +51,24 @@ Copy this ID to use in your game code:
   "everplast_a1b2c3d4"
 ```
 
-### `shard recording list`
+### `forge recording list`
 
 View all configured events.
 
-### `shard recording remove`
+### `forge recording remove`
 
 Remove an event from your configuration.
 
-### `shard recording export`
+### `forge recording export`
 
 Export events to `game_events.json` for distribution.
 
 ```bash
-shard recording export
-shard recording export -o ./build/game_events.json
+forge recording export
+forge recording export -o ./build/game_events.json
 ```
 
-### `shard recording validate`
+### `forge recording validate`
 
 Check your configuration for errors.
 
