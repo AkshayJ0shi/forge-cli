@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://shard.gg/schemas/shard-config.json",
+  "title": "Shard SDK Configuration",
+  "description": "Configuration file for Shard SDK generation in Godot projects",
+  "type": "object",
+  "required": ["gameName", "godotVersion", "gameType", "features"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference for IDE validation"
+    },
+    "gameName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "The name of your game project"
+    },
+    "godotVersion": {
+      "type": "string",
+      "enum": ["3.x", "4.x"],
+      "description": "Target Godot engine version"
+    },
+    "gameType": {
+      "type": "string",
+      "enum": ["singleplayer", "multiplayer"],
+      "description": "Type of game (determines if multiplayer SDK is included)"
+    },
+    "features": {
+      "type": "object",
+      "description": "SDK features to enable",
+      "properties": {
+        "recording": {
+          "type": "boolean",
+          "description": "Enable recording SDK for game event capture"
+        },
+        "errorTracking": {
+          "type": "boolean",
+          "description": "Enable error tracking SDK for crash reporting"
+        },
+        "multiplayer": {
+          "type": "boolean",
+          "description": "Enable multiplayer SDK (auto-enabled for multiplayer game type)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "recording": {
+      "type": "object",
+      "description": "Recording feature configuration",
+      "properties": {
+        "events": {
+          "type": "array",
+          "description": "List of recording events",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "createdAt"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+_[a-f0-9]{8}$",
+                "description": "Unique event identifier (format: gameName_8hexchars)"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 50,
+                "description": "Human-readable event name"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "ISO 8601 timestamp of event creation"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
